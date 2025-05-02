@@ -1,0 +1,12 @@
+rules:
+  - cre:
+      id: bad-regex-example
+    metadata:
+      id: A4ZFQZLprRMYH6g9kfiJRe
+      hash: B5MsHJocMTimFUzEU1isyP
+    rule:
+      set:
+        event:
+          source: cre.log.kafka
+        match:
+          - "\\[emerg] (.+) still could not bind()" # use regex: instead

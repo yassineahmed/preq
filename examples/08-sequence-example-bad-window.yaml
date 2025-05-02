@@ -1,0 +1,15 @@
+rules:
+  - cre:
+      id: seq-example-2
+    metadata:
+      id: VPnEyus1uAudzNL8nMaqm2
+      hash: MHXNJnG7cYEr8FLrpndsLZ
+    rule:
+      sequence:
+        event:
+          source: cre.log.kafka
+        window: 1s
+        order:
+          - regex: "foo(.+)bar"
+          - value: "test"
+          - regex: "b(.+)az"

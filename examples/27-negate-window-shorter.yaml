@@ -1,0 +1,18 @@
+rules:
+  - cre:
+      id: negate-window-shorter
+    metadata:
+      id: G1VtCxz7hPVwH1LCpJbdZr
+      hash: Mp4NrH8nea7oy1VVbMSWvC
+    rule:
+      set:
+        event:
+          source: cre.log.kafka
+        window: 5s
+        match:
+          - regex: "foo(.+)bar"
+          - value: "test"
+          - regex: "b(.+)az"
+        negate:
+          - value: FP2
+            window: 17s

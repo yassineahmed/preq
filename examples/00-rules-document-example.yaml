@@ -1,0 +1,35 @@
+rules:
+  - cre:
+      id: cre-2025-0000
+    metadata:
+      id: mC5rnfG5qz4TyHNscXKuJL
+      hash: cBsS3QQY1fwPVFUfYkKtHQ
+    rule:
+      set:
+        window: 5s
+        event:
+          source: cre.log.kafka
+        match:
+          - commonExpression1
+          - "this is another match"
+  - cre:
+      id: cre-2025-0001
+    metadata:
+      id: nC5rnfG5qz4TyHNscXKuJL
+      hash: dBsS3QQY1fwPVFUfYkKtHQ
+    rule:
+      sequence:
+        window: 10s
+        event:
+          source: cre.log.kafka
+        order:
+          - regex: "foo(.+)bar"
+          - commonExpression1
+          - commonExpression2
+
+# Optional terms section for reusing common conditions
+terms:
+  commonExpression1:
+    regex: "bo(.+)r"
+  commonExpression2:
+    value: "some other match" 

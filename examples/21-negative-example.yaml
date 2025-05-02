@@ -1,0 +1,17 @@
+rules:
+  - cre:
+      id: negate-example
+    metadata:
+      id: xv3JdgtRShwMrj8rX5mi6p
+      hash: QXooQcifDGLxtZKYYt2Nvb
+    rule:
+      sequence:
+        event:
+          source: cre.log.kafka
+        window: 10s
+        order:
+          - regex: "foo(.+)bar"
+          - value: "test"
+          - regex: "b(.+)az"
+        negate:
+          - this is normal

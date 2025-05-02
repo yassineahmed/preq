@@ -1,0 +1,12 @@
+rules:
+  - cre:
+      id: string-example-2
+    metadata:
+      id: pe77KnYc8daXGDnP2nTN2k
+      hash: kHuH898oQS8UyroaXb4bf4
+    rule:
+      set:
+        event:
+          source: cre.log.kafka
+        match:
+          - "[emerg] 1655#1655: still could not bind()"

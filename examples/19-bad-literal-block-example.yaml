@@ -1,0 +1,13 @@
+rules:
+  - cre:
+      id: bad-yaml-literal-block
+    metadata:
+      id: 2o278NtyqfoNacFrGHkm3d
+      hash: 59b7HHeeZwvgtyYbe2WaT9
+    rule:
+      set:
+        event:
+          source: cre.log.kafka
+        match:
+          - regex: |
+              "\\[emerg] (.+) still could not bind()"

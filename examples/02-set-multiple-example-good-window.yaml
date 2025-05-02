@@ -1,0 +1,15 @@
+rules:
+  - cre:
+      id: set-example-2
+    metadata:
+      id: 2BeLA3siEd5Kd2zvbdH2Jq
+      hash: vse1eFMii3UcjqQsq1cfdF
+    rule:
+      set:
+        window: 10s
+        event:
+          source: cre.log.kafka
+        match:
+          - value: "test"
+          - regex: "foo(.+)bar"
+          - regex: "b(.+)az"

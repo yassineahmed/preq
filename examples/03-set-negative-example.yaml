@@ -1,0 +1,17 @@
+rules:
+  - cre:
+      id: set-negative
+    metadata:
+      id: 5zwKegrhCpf86okDM7qVYc
+      hash: awacKg539rEvgkEngk679x
+    rule:
+      set:
+        window: 10s
+        event:
+          source: cre.log.kafka
+        match:
+          - value: "test"
+          - regex: "foo(.+)bar"
+          - regex: "b(.+)az"
+        negate:
+          - already in use

@@ -1,0 +1,19 @@
+rules:
+  - cre:
+      id: negate-absolute
+    metadata:
+      id: Ptu8PAQuvobc3TkWnck1Zo
+      hash: fvwHowvd9RPLCvWN6rJH6P
+    rule:
+      set:
+        event:
+          source: cre.log.kafka
+        window: 5s
+        match:
+          - regex: "foo(.+)bar"
+          - value: "test"
+          - regex: "b(.+)az"
+        negate:
+          - value: FP2
+            window: 20s
+            absolute: true

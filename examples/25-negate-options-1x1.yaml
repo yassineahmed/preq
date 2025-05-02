@@ -1,0 +1,14 @@
+rules:
+  - cre:
+      id: negate-options-1x1
+    metadata:
+      id: gJeoP8hPeNuGN7XhcJdPKN
+      hash: K7z17XgLcbLnpYHtTvaX7X
+    rule:
+      set:
+        event:
+          source: cre.log.kafka
+        match:
+          - regex: "foo(.+)bar"
+        negate:
+          - FP1

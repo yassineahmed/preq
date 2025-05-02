@@ -1,0 +1,12 @@
+rules:
+  - cre:
+      id: bad-order
+    metadata:
+      id: UoddCfP6YFxLPpX9BdmYdh
+      hash: BhzLAwg1SxZpX3mYUacw2g
+    rule:
+      set:
+        event:
+          source: cre.log.kafka
+        order: # Use match instead
+          - bar

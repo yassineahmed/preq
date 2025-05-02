@@ -1,0 +1,15 @@
+rules:
+  - cre:
+      id: bad-seq-match
+    metadata:
+      id: 7DEQGUdv2MDNsPLDABDBq5
+      hash: 1LBvYS5ZTGdAY3ApjE3TR6
+    rule:
+      sequence:
+        event:
+          source: cre.log.kafka
+        window: 10s
+        match: # use order instead
+          - regex: "foo(.+)bar"
+          - value: "test"
+          - regex: "b(.+)az"

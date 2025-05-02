@@ -1,0 +1,19 @@
+rules:
+  - cre:
+      id: multiple-negatives
+    metadata:
+      id: nNW6fP7yjWafb3DqzWt79t
+      hash: zKB3UYeYPjSPophgXf1BhP
+    rule:
+      sequence:
+        event:
+          source: cre.log.kafka
+        window: 10s
+        order:
+          - regex: "foo(.+)bar"
+          - value: "test"
+          - regex: "b(.+)az"
+        negate:
+          - FP1
+          - FP2
+          - FP3

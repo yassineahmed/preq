@@ -1,0 +1,20 @@
+rules:
+  - cre:
+      id: neg-all-opts
+    metadata:
+      id: XZUx7gkmbkc3BQSadKeSk4
+      hash: Vgs91FMjNCPMJF81xUm4UZ
+    rule:
+      set:
+        event:
+          source: cre.log.kafka
+        window: 5s
+        match:
+          - regex: "foo(.+)bar"
+          - value: "test"
+          - regex: "b(.+)az"
+        negate:
+          - value: FP1
+            slide: -9s
+            anchor: 1
+            window: 1s

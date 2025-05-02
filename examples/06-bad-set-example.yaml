@@ -1,0 +1,12 @@
+rules:
+  - cre:
+      id: bad-negate
+    metadata:
+      id: 5QiBd6c1NhVhmfD43TQTUp
+      hash: kkqfjvotUX2gPnTuv34rNU
+    rule:
+      set:
+        event:
+          source: cre.log.kafka
+        negate: # Negates may not be used without positive conditions
+          - "foo(.+)bar"

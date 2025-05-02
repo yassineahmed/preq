@@ -1,0 +1,19 @@
+rules:
+  - cre:
+      id: negate-anchor
+    metadata:
+      id: CQmArNYk7PziNhfsVruuTD
+      hash: NN36Tt1K7W8h6s3xKkdVtZ
+    rule:
+      set:
+        event:
+          source: cre.log.kafka
+        window: 5s
+        match:
+          - regex: "foo(.+)bar"
+          - value: "test"
+          - regex: "b(.+)az"
+        negate:
+          - value: FP2
+            window: 17s
+            anchor: 1
